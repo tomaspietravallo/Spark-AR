@@ -1,6 +1,6 @@
 /* If you dont need to change the opacity of a material and just want a value in the patch editor, delete lines 11, 17, 23, 26 & 33*/
 /* If you dont need to get the value in patch editor and just change the opacity of a material, delete lines 6, 22, 26 & 32*/
-/* If you dont waant to change anything and use this code as is, set a from script variable called scriptToEditorVar (number) (not required if you do as said in line 2) - drag it to the patch editor - and create a material called material0 (not required if you do as said in line 1)*/
+/* If you dont want to change anything and use this code as is, set a from script variable called scriptToEditorVar (number) (not required if you do as said in line 2) - drag it to the patch editor - and create a material called material0 (not required if you do as said in line 1)*/
 
 const NativeUI = require("NativeUI");
 const Patches = require("Patches");
@@ -35,7 +35,7 @@ slider.value.monitor({fireOnInitialValue: true}).subscribe((val)=>{
     Time.setTimeout(function(){userScope.remove("sliderValue")}, 10000); // Change the e.g. key for yours, and the ms value if you want to | 10000ms = the value is stored for 10s
 })
 
-/* The code below makes the slider invisible when a photo or video us taken, if you want it to still be visible, change it to slider.visible = true; */
+/* The code below makes the slider invisible when a video is being recorded, if you want it to still be visible, change it to slider.visible = true; */
 
 if(CameraInfo.isRecordingVideo){
     slider.visible = false;
