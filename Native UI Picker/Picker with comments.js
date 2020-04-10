@@ -8,7 +8,7 @@ const Persistence = require("Persistence");
 
 const picker = NativeUI.picker;
 const userScope = Persistence.userScope;
-let timer = Time.setTimeout(()=>{userScope.remove("index")}, 12000);
+let timer = Time.setTimeout(()=>{userScope.remove("index")}, 25000); // this is a default value for timer, it is not the time it takes for the memory value to be deleted see line 65 for that
 
 function visible(){ // This bit makes surre the picker is visible | Not sure what the chances of it not showing are but hey instagram wants error handling so...
     try {
