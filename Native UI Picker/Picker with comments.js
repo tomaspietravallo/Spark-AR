@@ -50,13 +50,12 @@ Promise.all([
             {image_texture: result[10]},
         ]
     });
-    userScope.get("index").then((val)=>{ // "index" is the Persistence key, you add them in Capabilities -> +Persistence
-        picker.selectedIndex = val.value;
-    }).catch(()=>{
-        picker.selectedIndex = 0; // this is the default value if none is found in memory
-    })
 })
-
+userScope.get("index").then((val)=>{ // "index" is the Persistence key, you add them in Capabilities -> +Persistence
+    picker.selectedIndex = val.value;
+}).catch(()=>{
+    picker.selectedIndex = 0; // this is the default value if none is found in memory
+})
 // Monitors & sends the value to the patch editor
 picker.selectedIndex.monitor({fireOnInitialValue: true}).subscribe((val)=>{
     Patches.inputs.setScalar("scriptToEditorVar", val.newValue); // "scriptToEditorVar" is the name of your "From Script" variable (it has to be a Number Variable, unless you change the setScalar part)
