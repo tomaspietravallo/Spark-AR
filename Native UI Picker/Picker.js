@@ -49,11 +49,11 @@ Promise.all([
             {image_texture: result[10]},
         ]
     });
-})
-userScope.get("index").then((val)=>{ 
-    picker.selectedIndex = val.value;
-}).catch(()=>{
-    picker.selectedIndex = 0;
+    userScope.get("index").then((val)=>{ 
+        picker.selectedIndex = val.value;
+    }).catch(()=>{
+        picker.selectedIndex = 0;
+    })
 })
 
 picker.selectedIndex.monitor({fireOnInitialValue: true}).subscribe((val)=>{
