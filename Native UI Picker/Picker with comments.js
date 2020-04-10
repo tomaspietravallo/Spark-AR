@@ -10,11 +10,11 @@ const picker = NativeUI.picker;
 const userScope = Persistence.userScope;
 let timer = Time.setTimeout(()=>{userScope.remove("index")}, 12000);
 
-function visible(){ // Not sure what the chances of it not showing are but hey instagram wants error handling so...
+function visible(){ // This bit makes surre the picker is visible | Not sure what the chances of it not showing are but hey instagram wants error handling so...
     try {
         picker.visible = true; 
     } catch (error) {
-        Time.setTimeout(visible(), 100); // I've checked (Diagnostics.log) this to make sure that under normal conditions this doesn't suddenly start a recursive loop
+        Time.setTimeout(visible(), 100); // This is the "error handling" | I've checked (Diagnostics.log) this to make sure that under normal conditions this doesn't suddenly start a recursive loop
     }
 }
 
