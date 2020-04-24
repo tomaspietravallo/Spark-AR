@@ -1,6 +1,8 @@
 # Native UI Control Multiple Sliders
 To use the files, create a script in Spark AR (Add Assets button) and copy paste the contents of the file you choose to it, or download the file and drag it into spark.
 
+Please note all this does is send values to the patch editor, these can be used however you want, instead of editing the cameraTexture, it could say customize a character in a game
+
 # Disclaimer
 This is based off [@data-sapiens](https://github.com/data-sapiens) post on facebook: https://www.facebook.com/groups/SparkARcommunity/permalink/824354817976562/
 
