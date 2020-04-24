@@ -18,7 +18,7 @@ const userScope = Persistence.userScope;
 
 let amountOfCustoms = 0
 let customPresets = [];
-let defaults = { "15": [0,0,0,1,0,0,0,0,0], "16":[0.7,-0.7,0,0.05,0,0,0.8,0.8,0.7], "17":[0.6,-0.2,0,0,0,0,0,0,0]};
+let defaults = { "15": [0,0,0,1,0,0,0,0,0], "16":[0.7,-0.7,0,0.05,0,0,0.8,0.8,0.7], "17":[0.6,-0.2,0,0,0,0,0,0,0]}; // the values for the default settigngs
 let settings = [0,0,0,0,0,0,0,0,0]; // current settings - the ones you chage with sliders and gets sent to the patch editor
 let settingsObj = {}; // settings saved by the user
 let instruc0 = false; // instructions
