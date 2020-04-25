@@ -193,17 +193,17 @@ picker.selectedIndex.monitor({fireOnInitialValue: true}).subscribe((val)=>{
     fromNeutral = (index - neutral); // count starts from 0, if < 0 then error
 
     resetSliderBasedOnValue();
-    const instr1 = function(){
-        Instruction.bind(instruc1, 'touch_hold');
-        if((parseInt(Object.keys(settingsObj).pop()) > 14) && val.newValue < neutral){ // this is one of the the instructions, it checks that one of the default settings is on the object and that it's selected | if a non default exists => defaults auto delete
-        instruc1 = true;    
-            Time.setTimeout(()=>{
-                instruc1 = false
-                instr1();
-            }, 1000);
-        }
+    if((parseInt(Object.keys(settingsObj).pop()) > 14) && val.newValue < neutral){ // this is one of the the instructions, it checks that one of the default settings is on the object and that it's selected | if a non default exists => defaults auto delete
+        instruc1 = true;
+        const instr = function(){
+            Instruction.bind(instruc1, 'tap_to_advance');
+        };
+        instr();
+        Time.setTimeout(()=>{
+            instruc1 = false;
+            instr();
+        },3500)
     }
-    instr1();
     if(val.newValue == neutral){
         slider.visible = false;
         sendToPatches(0,0,0,0,0,0,0,0,0);
@@ -227,16 +227,16 @@ slider.value.monitor({fireOnInitialValue: true}).subscribe((val)=>{
             settings[fromNeutral - 1] = 0;
         } else{
             settings[fromNeutral - 1] = (Math.floor(amount * 100) / 100);
-            const instr = function(){
-                if( (parseInt(Object.keys(settingsObj).pop()) > 14) && ( val.newValue >= 0.6 || val.newValue <= 0.4) ){ // this is the instruction
-                    instruc0 = true;
+            if( (parseInt(Object.keys(settingsObj).pop()) > 14) && ( val.newValue >= 0.6 || val.newValue <= 0.4) ){ // this is the instruction
+                instruc0 = true;
+                const instr = function(){
                     Instruction.bind(instruc0, 'tap_to_advance');
-                    instr();
-                    Time.setTimeout(()=>{
-                        instruc0 = false;
-                        instr();
-                    }, 1000);
                 };
+                instr();
+                Time.setTimeout(()=>{
+                    instruc0 = false;
+                    instr();
+                },3500)
             };
         };
         sendToPatches(settings[0], settings[1], settings[2], settings[3], settings[4], settings[5], settings[6], settings[7], settings[8]);
