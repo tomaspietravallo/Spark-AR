@@ -250,7 +250,7 @@ TG.onTap().subscribe(()=>{
     // after neutral
     if (fromNeutral >= 1){
         for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
-            if (parseInt(key) > 5) {
+            if (parseInt(key) > 4) {
                 delete settingsObj[key]
             };
         };
