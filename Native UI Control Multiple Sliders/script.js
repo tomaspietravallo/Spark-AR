@@ -308,11 +308,6 @@ Camera.isCapturingPhoto.monitor({fireOnInitialValue: true}).subscribe((val)=>{
                 break
             };
         };
-        for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
-            if (parseInt(key) > 5) {
-                delete settingsObj[key]
-            };
-        };
         update(0); 
     };
 });
@@ -326,11 +321,6 @@ Camera.isRecordingVideo.monitor({fireOnInitialValue: true}).subscribe((val)=>{
                 settingsObj = JSON.parse(JSON.stringify(settingsObj));
                 // break below
                 break
-            };
-        };
-        for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
-            if (parseInt(key) > 5) {
-                delete settingsObj[key]
             };
         };
         update(0); 
