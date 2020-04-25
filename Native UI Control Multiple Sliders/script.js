@@ -255,7 +255,7 @@ TG.onTap().subscribe(()=>{
             };
         };
         let createdAtIndex = 0;
-        for (let indexlocal = 0; indexlocal <= 5; indexlocal++) {
+        for (let indexlocal = 0; indexlocal <= 4; indexlocal++) {
             if (indexlocal in settingsObj) {
                 // do nothing
             }else{
