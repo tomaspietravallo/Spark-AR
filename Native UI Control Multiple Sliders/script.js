@@ -3,7 +3,6 @@ const NativeUI = require("NativeUI");
 const Textures = require("Textures");
 const Patches = require("Patches");
 const Persistence = require("Persistence");
-const Diagnostics = require("Diagnostics");
 const TG = require("TouchGestures");
 const R = require('Reactive');
 const Instruction = require('Instruction');
@@ -22,7 +21,7 @@ let defaults = { "15": [0,0,0,1,0,0,0,0,0], "16":[0.7,-0.7,0,0.05,0,0,0.8,0.8,0.
 let settings = [0,0,0,0,0,0,0,0,0]; // current settings - the ones you chage with sliders and gets sent to the patch editor
 let settingsObj = {}; // settings saved by the user
 let instruc0 = false; // instructions
-let instruc1 = false;
+let instruc1 = false; // instructions
 
 let neutral = 0; // defines the position of the middle /neutral button
 let fromNeutral = 0; // what's the value from the neutral?. If positive it's to the right and negative to the left
@@ -267,8 +266,6 @@ TG.onTap().subscribe(()=>{
                 break
             };
         };
-        // JSON
-        Diagnostics.log(neutral) // errror on passing three as argument based on old neutral
         update(createdAtIndex);
     };
     instruc0 = false; // sets an instruction (tap_to_advance) to false so that it isn't shown anymore
@@ -312,7 +309,11 @@ Camera.isCapturingPhoto.monitor({fireOnInitialValue: true}).subscribe((val)=>{
                 break
             };
         };
-        // JSON
+        for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
+            if (parseInt(key) > 5) {
+                delete settingsObj[key]
+            };
+        };
         update(0); 
     };
 });
@@ -328,7 +329,11 @@ Camera.isRecordingVideo.monitor({fireOnInitialValue: true}).subscribe((val)=>{
                 break
             };
         };
-        // JSON
+        for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
+            if (parseInt(key) > 5) {
+                delete settingsObj[key]
+            };
+        };
         update(0); 
     };
 });
