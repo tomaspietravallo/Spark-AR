@@ -7,7 +7,6 @@ const TG = require("TouchGestures");
 const R = require('Reactive');
 const Instruction = require('Instruction');
 const Time = require("Time");
-const Materials = require("Materials");
 const Camera = require("CameraInfo");
 
 // NUI picker, slider & userScope
