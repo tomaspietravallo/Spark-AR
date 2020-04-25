@@ -10,7 +10,7 @@ The patch asset uses Josh Beckwith's \([@positlabs](https://github.com/positlabs
 - 'CAMERA TEXTURE': The camera texture RGBA or RGB (alpha is discarted so it doesn't matter)
 - 'Slider Value': This value should range from -1 to +1 (you can use a 'From range' to transform the slider value)
 
-\* I have only done this with saturation, but I assume lightness and hue should work, also, the luts are modifed to +70/65 and -100 because +100 can cause unwanted noise.
+\* I have only done this with saturation, but I assume lightness and hue should work, also, the luts are modifed to +70/65 and -100, because +100 can cause unwanted noise if you can see a sharp edge form in the LUT png.
 
 ### Outputs:
 - 'Result': A RGBA signal that should be assigned to a flat material (Blend Mode: alpha), and that material assigned to its own rectangle
