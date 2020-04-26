@@ -298,31 +298,47 @@ TG.onLongPress().subscribe(()=>{
 
 Camera.isCapturingPhoto.monitor({fireOnInitialValue: true}).subscribe((val)=>{
     if(val.oldValue == false && val.newValue == true){
-        for (let index = 0; index <= (settings.length - 1); index++) {
-            if (index in settingsObj) {
-                // code
-            }else{
-                settingsObj[index] = settings;
-                settingsObj = JSON.parse(JSON.stringify(settingsObj));
-                // break below
-                break
+        if (fromNeutral >= 1){
+            for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
+                if (parseInt(key) > 4) {
+                    delete settingsObj[key]
+                };
             };
+            let createdAtIndex = 0;
+            for (let indexlocal = 0; indexlocal <= 4; indexlocal++) {
+                if (indexlocal in settingsObj) {
+                    // do nothing
+                }else{
+                    createdAtIndex = (neutral - indexlocal);
+                    settingsObj[indexlocal] = settings
+                    settingsObj = JSON.parse(JSON.stringify(settingsObj)); // this is to break the reference to the value, see update() for more details
+                    break
+                };
+            };
+            update(createdAtIndex);
         };
-        update(0); 
     };
 });
 Camera.isRecordingVideo.monitor({fireOnInitialValue: true}).subscribe((val)=>{
     if(val.oldValue == false && val.newValue == true){
-        for (let index = 0; index <= (settings.length - 1); index++) {
-            if (index in settingsObj) {
-                // code
-            }else{
-                settingsObj[index] = settings;
-                settingsObj = JSON.parse(JSON.stringify(settingsObj));
-                // break below
-                break
+        if (fromNeutral >= 1){
+            for (const key in settingsObj) { // deletes any default setting if a custom one is created (if the limit of custom that can be made is to be raised, this should be changed along with some other things)
+                if (parseInt(key) > 4) {
+                    delete settingsObj[key]
+                };
             };
+            let createdAtIndex = 0;
+            for (let indexlocal = 0; indexlocal <= 4; indexlocal++) {
+                if (indexlocal in settingsObj) {
+                    // do nothing
+                }else{
+                    createdAtIndex = (neutral - indexlocal);
+                    settingsObj[indexlocal] = settings
+                    settingsObj = JSON.parse(JSON.stringify(settingsObj)); // this is to break the reference to the value, see update() for more details
+                    break
+                };
+            };
+            update(createdAtIndex);
         };
-        update(0); 
     };
 });
