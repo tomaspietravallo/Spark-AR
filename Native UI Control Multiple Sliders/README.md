@@ -22,7 +22,9 @@ The code has comments on parts which it may not be obvios what x is doing
 ## Changing the code
 If you what to add settings to be changed (aka have more picker buttons to use) you should add the icons to the Promise.all \(please note order matters\), the picker configuration where all of the rest are added, to connect those new values to patches you should increase the amount handled by sendToPatches\(\) and add the new indexes to each sendToPatches\(\) call \(Control + F it\).
 
-If you what to have more "capacity" for saved states, you will have to add the icons to Promise.all (please note order matters), change the picker configuration, make sure to test a long the way to catch errors, and check that any if / for expression reling on a constant number (dependent or doing things based on those states) is changed accordingly 
+If you what to have more "capacity" for saved states, you will have to add the icons to Promise.all (please note order matters), change the picker configuration, make sure to test a long the way to catch errors, and check that any if / for expression reling on a constant number (dependent or doing things based on those states) is changed accordingly
+
+Please note changing the number of textures changes the index of the default icons and you will have to change the numbers on the `let defaults = {...} ` to the corresponding values for your default icons - notice they are called 3 separate times for 3 default configurations.
 
 ## Project Capabilities:
 - Instructions: 'tap_to_advance' & 'touch_hold'
