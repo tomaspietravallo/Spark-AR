@@ -342,3 +342,8 @@ Camera.isRecordingVideo.monitor({fireOnInitialValue: true}).subscribe((val)=>{
         };
     };
 });
+
+
+// What's below shouldn't be exported with the final filter, much less if it's left uncommented, but it is really useful for debugging purposes
+// The function will be called at the end of execution (so everytime it's restarted) and everytime you type "clean" in the console
+//export const clean = userScope.remove("settings")
