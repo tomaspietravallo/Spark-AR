@@ -9,7 +9,7 @@ userScope.get('slider').then((val)=>{
     slider.value = val.value
     slider.visible = true
 }).catch(()=>{
-    slider.value = 0.2
+    slider.value = 1
     slider.visible = true
 })
 
