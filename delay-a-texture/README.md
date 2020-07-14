@@ -2,7 +2,7 @@
 
 > Note: This is still more manual than I'd like it to be, it's not just changing one value. If a new update or scriting with render passes is released this will probably become obsolete. As of now this is sort of a tutorial
 
-The things are contained within a patch group that you will have to ungroup. That's because Spark AR would complain whenever I tried adding render passes containerized in their own separate groups
+The things are contained within a patch group (\[UNGROUP_ME\].arp) that you will have to ungroup. That's because Spark AR would complain whenever I tried adding render passes containerized in their own separate groups
 
 To delay a texture for an extended amount of time (more than 1 frame), you will have to chain multiple patches together as seen in the image below. You can `Ctrl+C` `Ctrl + V` things.
 
