@@ -8,6 +8,6 @@ To delay a texture for an extended amount of time (more than 1 frame), you will 
 
 From what I've seen every loop through the 'Delay Frame' delays the texture, for about 1 to 2 frames. So every 15-30 patches you connect you will delay the texture for a second
 
-![PatchesScreenshot](https://github.com/tomaspietravallo/Spark-AR/blob/master/Delay-a-texture/Screen%20Shot%202020-07-14%20at%2000.08.59.png)
+![PatchesScreenshot](https://github.com/tomaspietravallo/Spark-AR/blob/master/delay-a-texture/Screen%20Shot%202020-07-14%20at%2000.08.59.png)
 
 The 'input' & 'output' seen on the image is due to everything beeing contained inside a group. The delay frames themselves are not grouped separately, but rather all together inside a group
