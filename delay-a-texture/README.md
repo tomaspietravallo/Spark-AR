@@ -1,7 +1,7 @@
 # Delay-a-texture
 Languages / Idiomas
 - [English](#English)
-- [Spanish \/ Español](#Spanish%20/%20Español)
+- [Spanish \/ Español](#Spanish--espa%C3%B1ol)
 
 ---
 
