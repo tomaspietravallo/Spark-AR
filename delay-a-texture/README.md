@@ -6,7 +6,6 @@ Languages / Idiomas
 ---
 
 ## English
-> **IMPORTANT: It's 17 JUL 2020 23:15 UTC-3 and I've just seen a method for doing this that's waaaay faster and better. I still haven't reverse engineered it but please bear in mind this is not the best way to do this.**
 
 > Note: This is still more manual than I'd like it to be, it's not just changing one value. If a new update or scriting with render passes is released this will probably become obsolete. As of now this is sort of a tutorial.
 
@@ -23,7 +22,6 @@ The 'input' & 'output' seen on the image is due to everything beeing contained i
 ---- 
 
 ## Spanish / Español
-> **IMPORTANTE: Es el 17 JUL 2020 23:15. UTC-3 y acabo de ver un metodo muchisimo mas rapido y mejor. Todavia no lo he logrado hacer por mi cuenta pero porfavor tene en cuenta que este metodo no es el mejor.**
 
 > Observación: Esto sigue siendo más manual de lo que me gustaria, no es simplemente cambiar un valor. Si se lanza una nueva actualización o pases de renderizado desde codigo esto probablemente se vuelva obsoleto. Por ahora esto es una especie de tutorial.
 
