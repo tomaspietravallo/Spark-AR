@@ -27,7 +27,7 @@ The 'input' & 'output' seen on the image is due to everything beeing contained i
 
 > Observación: Esto sigue siendo más manual de lo que me gustaria, no es simplemente cambiar un valor. Si se lanza una nueva actualización o pases de renderizado desde codigo esto probablemente se vuelva obsoleto. Por ahora esto es una especie de tutorial.
 
-> IMPORTANTE: **Mantener al minimo el tamaño (Size), cantidad de canales y cantidad de delay frames es importantisimo**. Cada Delay Frame consume muchos recursos del telefono y **va terminar afectando el rendimiento si no se controla**, incluso al punto de que se quede trabado Instagram.
+> IMPORTANTE: **Mantener al minimo el tamaño (Size), cantidad de canales (Color channels) y cantidad de delay frames es importantisimo**. Cada Delay Frame consume muchos recursos del telefono y **va terminar afectando el rendimiento si no se controla**, incluso al punto de que se quede trabado Instagram.
 
 Todo esta dentro de un grupo de patches (\[UNGROUP_ME\].arp) que vas tener que desagrupar. Esto es porque Spark AR daba error cada vez que intentaba agregar pases de renderizado en sus grupos individuales o importar multiples pases de renderizado de una.
 
