@@ -9,6 +9,8 @@ Languages / Idiomas
 
 > Note: This is still more manual than I'd like it to be, it's not just changing one value. If a new update or scriting with render passes is released this will probably become obsolete. As of now this is sort of a tutorial.
 
+> IMPORTANT: **Keeping down the size, amount of channels and amount of Delay frames is a must**. Each Delay Frame consumes a lot of processing/memoory resources and **it will hamper performance if not kept under control**, even to the point of crashing Instagram.
+
 Everything is contained within a patch group (\[UNGROUP_ME\].arp) that you will have to ungroup. That's because Spark AR would complain whenever I tried adding render passes containerized in their own separate groups or importing multiple ones at once
 
 To delay a texture for an extended amount of time (more than 1 frame), you will have to chain multiple patches together as seen in the image below. You can `Ctrl+C` + `Ctrl+V` things.
@@ -24,6 +26,8 @@ The 'input' & 'output' seen on the image is due to everything beeing contained i
 ## Spanish / Español
 
 > Observación: Esto sigue siendo más manual de lo que me gustaria, no es simplemente cambiar un valor. Si se lanza una nueva actualización o pases de renderizado desde codigo esto probablemente se vuelva obsoleto. Por ahora esto es una especie de tutorial.
+
+> IMPORTANTE: **Mantener al minimo el tamaño (Size), cantidad de canales y cantidad de delay frames es importantisimo**. Cada Delay Frame consume muchos recursos del telefono y **va terminar afectando el rendimiento si no se controla**, incluso al punto de que se quede trabado Instagram.
 
 Todo esta dentro de un grupo de patches (\[UNGROUP_ME\].arp) que vas tener que desagrupar. Esto es porque Spark AR daba error cada vez que intentaba agregar pases de renderizado en sus grupos individuales o importar multiples pases de renderizado de una.
 
