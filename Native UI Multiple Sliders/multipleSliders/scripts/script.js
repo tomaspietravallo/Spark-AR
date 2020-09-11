@@ -64,7 +64,6 @@ const Picker = {
           }
 
           this.pushToPatches();
-          require('Diagnostics').log(this.settings);
         });
       resolve();
     });
@@ -105,13 +104,13 @@ const Picker = {
             Diagnostics.log('There were no settings saved');
           }
           this.pushToPatches();
-          resolve();
         });
       } catch {
         Diagnostics.log(
           `The key: "${this.persistenceKey}" is not whitelisted (case sensitive)`
         );
       }
+      resolve();
     });
   },
 };
