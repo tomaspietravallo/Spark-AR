@@ -10,9 +10,9 @@ This script is designed for people with little or no experience in programming w
 
 3. Add the Picker capability. Go to Project > Edit Properties... > Capabilities > + NativeUI > + Picker.
 
-4. Create a From Script variable called `index` (case sensitive) of the type `scalar` / `number`, select the script you imported and on the right side add the variable.
+4. Create a From Script variable called `index` (case sensitive) of the type `scalar` / `number`, select the script you imported and on the right side add the variable. Then drag the script to the patch editor (otherwise you'll see an error saying it doesn't exist)
 
-![alt](https://lh3.googleusercontent.com/eJnVfGcqx9copp1SrKWloM1pfqsRiKk8tHvliDuH6aEMLnqV7jjZbORxj3C2dJcoOqekYIAXS2MMVwV58oTIRViPrxEf9M2UnsxcrvZQ3Ge9nzpyLOALxGOAFAIZKrYYUPYyYNffag=w2400)
+![](https://lh3.googleusercontent.com/40ldvt2kBCbiU6bJdUKDwTGrfRIPV9ge2C8Z5ZPitYW6DXP_wIgGnUYLNL9ahw0_90UAFU5L8FSoWT9JSn1NcV3hlDV6H14A5LT9V88U3KBcj2-Cc_gp9LYPwrjHtS3cxxbI9u72IA=w2400)
 
 Example icon names: `icon0`, `icon1`, `icon2` ... `icon999`. 
 
