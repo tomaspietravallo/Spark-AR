@@ -8,6 +8,12 @@ This script is designed for people with little or no experience in programming w
 
 2. Rename the textures you want to use for your picker's icons with the following pattern: `icon[0-9]`
 
+3. Add the Picker capability. Go to Project > Edit Properties... > Capabilities > + NativeUI > + Picker.
+
+4. Create a From Script variable called `index` (case sensitive) of the type `scalar` / `number`, select the script you imported and on the right side add the variable.
+
+![alt](https://lh3.googleusercontent.com/eJnVfGcqx9copp1SrKWloM1pfqsRiKk8tHvliDuH6aEMLnqV7jjZbORxj3C2dJcoOqekYIAXS2MMVwV58oTIRViPrxEf9M2UnsxcrvZQ3Ge9nzpyLOALxGOAFAIZKrYYUPYyYNffag=w2400)
+
 Example icon names: `icon0`, `icon1`, `icon2` ... `icon999`. 
 
 There's no limit to how many icons you can have, just keep adding numbers to the name.
