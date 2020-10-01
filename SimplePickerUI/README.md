@@ -4,9 +4,9 @@ This script is designed for people with little or no experience in programming w
 
 ## How to use:
 
-To use it just download the script called [picker.js](https://github.com/tomaspietravallo/Spark-AR/blob/master/SimplePickerUI/picker.js) and import it to your project.
+1. To use it just download the script called [picker.js](https://github.com/tomaspietravallo/Spark-AR/blob/master/SimplePickerUI/picker.js) and import it to your project.
 
-And rename the textures you want to use for your picker's icons with the following pattern: `icon[0-9]`
+2. Rename the textures you want to use for your picker's icons with the following pattern: `icon[0-9]`
 
 Example icon names: `icon0`, `icon1`, `icon2` ... `icon999`. 
 
@@ -25,10 +25,15 @@ If you want to change the pattern used to load the icons you will have to change
 
 The patterns have to be in the format: `name*`, `*` means it will match any string that follows the name you choose.
 
-Remember names are case sensitive
+Patterns are case sensitive.
 
 Eg: 
 
 `myIcon*`:
 - ✅ `myIcon0`, `myIcon1`, `myIcon2`, ... `myIcon999`
 - ❌ `MYICON0`, `mYIcon0`, `myicon0`, ...
+
+## Donations ❤️:
+If you found this useful or used it on a client's project, please consider donating a small amount as that helps me out and allows me to keep making small scripts like this one. This would be a one time donation with no hidden charges nor recurrent charges.
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=LEXFVQET96N2Y)
