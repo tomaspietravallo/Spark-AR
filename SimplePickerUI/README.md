@@ -20,6 +20,9 @@ There's no limit to how many icons you can have, just keep adding numbers to the
 
 ⚠️ Remember to disable compression on the textures just like with the regular Native UI Picker Patch ⚠️
 
+## Example Project:
+You can see an example project here: [picker.arprojpkg](https://github.com/tomaspietravallo/Spark-AR/blob/master/SimplePickerUI/picker.arprojpkg)
+
 ## Order of the icons:
 
 The icons will get ordered in ascending order.
@@ -38,6 +41,9 @@ Eg:
 `myIcon*`:
 - ✅ `myIcon0`, `myIcon1`, `myIcon2`, ... `myIcon999`
 - ❌ `MYICON0`, `mYIcon0`, `myicon0`, ...
+
+## Credits:
+Picker icons by [Josh Beckwith](https://www.instagram.com/positlabs/)
 
 ## Donations ❤️:
 If you found this useful or used it on a client's project, please consider donating a small amount as that helps me out and allows me to keep making small scripts like this one. This would be a one time donation with no hidden charges nor recurrent charges.
