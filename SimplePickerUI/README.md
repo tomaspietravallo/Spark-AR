@@ -20,6 +20,16 @@ There's no limit to how many icons you can have, just keep adding numbers to the
 
 ⚠️ Remember to disable compression on the textures just like with the regular Native UI Picker Patch ⚠️
 
+## More than 10 icons:
+
+If you wish to have more than 10 icons - more than `icon9`. 
+
+Use the pattern: `icon01`, `icon02`, `icon03`, ... `icon09`, `icon10`, `icon11` ...
+
+For numbers up to 999, use the pattern `icon001`, `icon002`, `icon003`, ... `icon099`, ... `icon999`.
+
+Always make sure the amount of digits on the name is the same, pad with `0`s at the front as necessary.
+
 ## Example Project:
 You can see an example project here: [picker.arprojpkg](https://github.com/tomaspietravallo/Spark-AR/blob/master/SimplePickerUI/picker.arprojpkg)
 
