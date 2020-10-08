@@ -13,7 +13,8 @@ const Picker = {
       throw `\nNo icon with the name provided was found. Remember it's case SENSITIVE.\n\nEg:\nicon1, icon2, icon3 are OK.\nIcon1, iCon2, icOn3 are NOT ok`;
     }
     this.setUpPicker().then(() => {
-      this.monitorIndex();
+      // Please make sure to define a FromScript patch with that name in the patch editor. Select the script > +From Script Variable (scalar) called "index" (case SENSITIVE)
+      Patches.inputs.setScalar('index', NUI.picker.selectedIndex);
     });
   },
   setUpPicker() {
@@ -33,15 +34,6 @@ const Picker = {
         throw '\nAn error occured:\n\nGo to Project > Edit Properties... > Capabilities > + NativeUI > + Picker\n\nRemember to disable compression on the textures you choose as icons ;)';
       }
     });
-  },
-  monitorIndex() {
-    NUI.picker.selectedIndex
-      .monitor({ fireOnInitialValue: true })
-      .select('newValue')
-      .subscribe((val) => {
-        // Please make sure to define a FromScript patch with that name in the patch editor. Select the script > +From Script Variable (scalar) called "index" (case SENSITIVE)
-        Patches.inputs.setScalar('index', val);
-      });
   },
 };
 
