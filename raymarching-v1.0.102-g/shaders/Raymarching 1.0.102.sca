@@ -59,18 +59,18 @@ namespace SDF {
         float h = clamp( 0.5 - 0.5*(d2-d1)/k, 0.0, 1.0 );
         return mix( d2, d1, h ) + k*h*(1.0-h);
     };
-    float scene(vec3 pos){
+    float scene(vec3 p){
         // Rotation matrix (X axis)
         mat3 rotation = mat3(vec3(1,0,0),
                                  vec3(0,cos(time),-sin(time)),
                                  vec3(0,sin(time),cos(time)));
         
-        float t = octahedron(((pos - vec3(0,0.02,0) * rotation) * rotation), 0.01);
+        float t = octahedron(((p - vec3(0,0.02,0) * rotation) * rotation), 0.01);
         
-        float s = sphere(pos, 0.005);
+        float s = sphere(p, 0.005);
         
         float b = box(
-                      pos-vec3(sin(time * 0.7) * 0.03, 0, 0),
+                      p-vec3(sin(time * 0.7) * 0.03, 0, 0),
                       vec3(0.005)
                       );
                       
@@ -109,11 +109,11 @@ float castRay(vec3 rayOrigin, vec3 rayDir){
 };
 
 // Calculate the normals for a shape
-vec3 calcNormal(vec3 pos){
+vec3 calcNormal(vec3 p){
     // Center sample
-    float c = SDF::scene(pos);
+    float c = SDF::scene(p);
     vec2 eps_zero = vec2(0.001, 0.0);
-    return normalize(vec3( SDF::scene(pos + eps_zero.xyy), SDF::scene(pos + eps_zero.yxy), SDF::scene(pos + eps_zero.yyx) ) - c);
+    return normalize(vec3( SDF::scene(p + eps_zero.xyy), SDF::scene(p + eps_zero.yxy), SDF::scene(p + eps_zero.yyx) ) - c);
 };
 
 // Hard Shadows
@@ -148,15 +148,15 @@ float shadowSoft( vec3 ro, vec3 rd, float mint, float maxt, float k ){
     return res;
 };
 
-vec3 shade( vec3 pos, vec3 nrm, vec4 light ){
-    vec3 toLight = light.xyz - pos;
+vec3 shade( vec3 p, vec3 nrm, vec4 light ){
+    vec3 toLight = light.xyz - p;
     
     float toLightLen = length( toLight );
     toLight = normalize( toLight );
     
     float comb = 0.1;
     
-    float vis = shadowSoft( pos, toLight, 0.0625, toLightLen, 8.0 );
+    float vis = shadowSoft( p, toLight, 0.0625, toLightLen, 8.0 );
     
     if ( vis > 0.0 ){
         float diff = 2.0 * max( 0.0, dot( nrm, toLight ) );
@@ -172,9 +172,9 @@ vec4 render(vec3 rayOrigin, vec3 rayDir){
  
     if (t != -1.0){
         // our ray hit the scene, so shade it with 2 lights
-        vec3 pos = rayOrigin + rayDir * t;
+        vec3 p = rayOrigin + rayDir * t;
         // Normals of the shape
-        vec3 N = normalize(calcNormal(pos));
+        vec3 N = normalize(calcNormal(p));
         
         // Light 1
         vec4 L1 = vec4(
@@ -194,8 +194,8 @@ vec4 render(vec3 rayOrigin, vec3 rayDir){
                   );
         L2 = normalize(L2);
         
-        vec3 shade1 = shade( pos, N, L1 );
-        vec3 shade2 = shade( pos, N, L2 );
+        vec3 shade1 = shade( p, N, L1 );
+        vec3 shade2 = shade( p, N, L2 );
         
         // Shade
         vec3 shadeAll =
