@@ -13,3 +13,5 @@ The scene to be rendered is under `SDF::scene()`. Lights are in the `render()` f
 The amount of rays can be changed but remember quality and performance are a tradeoff.
 
 Feel free to add your own functions or SDF primitives.
+
+> Part of the code were inspired by or taken from https://iquilezles.org/www/articles/distfunctions/distfunctions.htm
